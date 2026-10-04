@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Para ti ❤️</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Georgia, "Times New Roman", serif;
+    color: #fff;
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(circle at 15% 20%, rgba(125, 0, 30, .38), transparent 30%),
+        radial-gradient(circle at 85% 75%, rgba(0, 55, 150, .30), transparent 32%),
+        linear-gradient(135deg, #020205, #08030a, #020713);
+}
+
+/* =========================
+   FONDO
+========================= */
+
+.background {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.glow {
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: .28;
+}
+
+.red-glow {
+    background: #9b002b;
+    top: -100px;
+    left: -100px;
+}
+
+.blue-glow {
+    background: #004cff;
+    right: -120px;
+    bottom: -100px;
+}
+
+.star {
+    position: absolute;
+    color: rgba(255,255,255,.5);
+    animation: twinkle 3s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+    0%,100% {
+        opacity: .15;
+        transform: scale(.8);
+    }
+
+    50% {
+        opacity: .8;
+        transform: scale(1.2);
+    }
+}
+
+/* =========================
+   CONTENEDOR
+========================= */
+
+.container {
+    position: relative;
+    z-index: 2;
+    width: 92%;
+    max-width: 650px;
+    margin: auto;
+    padding: 25px 0 40px;
+}
+
+/* =========================
+   PROGRESO
+========================= */
+
+.progress-area {
+    margin-bottom: 22px;
+}
+
+.progress-text {
+    display: flex;
+    justify-content: space-between;
+    color: #8f8f9c;
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.progress {
+    height: 4px;
+    background: rgba(255,255,255,.08);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    width: 16%;
+    height: 100%;
+    background: linear-gradient(90deg, #9d002d, #004cff);
+    transition: .5s ease;
+}
+
+/* =========================
+   TARJETA
+========================= */
+
+.card {
+    padding: 28px 23px;
+    border-radius: 28px;
+
+    background: rgba(7, 7, 13, .82);
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+        0 25px 80px rgba(0,0,0,.65),
+        inset 0 0 50px rgba(120,0,30,.06);
+
+    backdrop-filter: blur(16px);
+}
+
+.step {
+    display: none;
+}
+
+.step.active {
+    display: block;
+    animation: appear .65s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   ENTRADA ROMÁNTICA
+========================= */
+
+.romantic-entry {
+    min-height: 540px;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    overflow: hidden;
+}
+
+.main-heart {
+    width: 245px;
+    height: 245px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at 35% 28%,
+            #c4003b,
+            #68001f 45%,
+            #150006 100%
+        );
+
+    border: 2px solid rgba(255,80,120,.3);
+
+    box-shadow:
+        0 0 25px rgba(190,0,55,.6),
+        0 0 80px rgba(120,0,35,.3),
+        inset 0 0 40px rgba(255,0,60,.15);
+
+    animation: heartbeat 2s infinite ease-in-out;
+}
+
+@keyframes heartbeat {
+    0%,100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.045);
+    }
+}
+
+.heart-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    font-size: 25px;
+    line-height: 1.2;
+
+    text-shadow: 0 3px 15px #000;
+}
+
+.heart-text strong {
+    color: #ff5579;
+    font-size: 31px;
+}
+
+.flower {
+    position: absolute;
+    font-size: 28px;
+    filter: drop-shadow(0 0 7px rgba(255,0,70,.35));
+}
+
+.flower.left {
+    left: 0;
+    top: 75px;
+    transform: rotate(-12deg);
+}
+
+.flower.right {
+    right: 0;
+    top: 95px;
+    transform: rotate(12deg);
+}
+
+.flower.bottom {
+    bottom: 100px;
+    font-size: 22px;
+}
+
+.floating-mini {
+    position: absolute;
+    font-size: 20px;
+    animation: miniFloat 3s infinite ease-in-out;
+}
+
+.m1 {
+    top: 45px;
+    left: 27%;
+}
+
+.m2 {
+    top: 175px;
+    right: 13%;
+    animation-delay: .7s;
+}
+
+.m3 {
+    bottom: 145px;
+    left: 12%;
+    animation-delay: 1.2s;
+}
+
+.m4 {
+    bottom: 125px;
+    right: 20%;
+    animation-delay: 1.7s;
+}
+
+@keyframes miniFloat {
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+.subtitle {
+    max-width: 420px;
+    margin: 22px auto 18px;
+
+    color: #c9c2c8;
+    font-size: 15px;
+    line-height: 1.7;
+    font-style: italic;
+}
+
+.open-button {
+    width: auto;
+    padding: 15px 28px;
+
+    border-radius: 50px;
+
+    background: linear-gradient(135deg, #870022, #b9003d);
+
+    border: 1px solid rgba(255,100,130,.3);
+
+    box-shadow: 0 8px 30px rgba(150,0,40,.35);
+
+    font-family: Georgia, serif;
+}
+
+/* =========================
+   TEXTOS
+========================= */
+
+.small-title {
+    color: #777783;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+h1 {
+    font-size: clamp(32px, 8vw, 48px);
+    line-height: 1.05;
+    margin-bottom: 18px;
+}
+
+h2 {
+    font-size: 27px;
+    line-height: 1.25;
+    margin-bottom: 18px;
+}
+
+p {
+    color: #c7c7cf;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.red {
+    color: #ff416b;
+}
+
+.blue {
+    color: #5794ff;
+}
+
+/* =========================
+   BOTONES
+========================= */
+
+.buttons {
+    display: grid;
+    gap: 12px;
+}
+
+button {
+    width: 100%;
+    min-height: 50px;
+
+    padding: 14px 18px;
+
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 14px;
+
+    color: white;
+    background: #15151e;
+
+    font-family: Georgia, serif;
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: .25s;
+}
+
+button:active {
+    transform: scale(.98);
+}
+
+button:hover {
+    background: #20202b;
+    transform: translateY(-2px);
+}
+
+.primary {
+    background: linear-gradient(135deg, #85001e, #b8003b);
+    box-shadow: 0 0 25px rgba(180,0,55,.22);
+}
+
+.blue-button {
+    background: linear-gradient(135deg, #00358f, #005fff);
+    box-shadow: 0 0 25px rgba(0,80,255,.2);
+}
+
+/* =========================
+   MENSAJES
+========================= */
+
+.message {
+    min-height: 26px;
+    margin-top: 15px;
+
+    text-align: center;
+
+    color: #ff496c;
+    font-size: 14px;
+}
+
+/* =========================
+   CORAZÓN INTERACTIVO
+========================= */
+
+.heart-area {
+    text-align: center;
+    padding: 15px 0;
+}
+
+.big-click-heart {
+    width: 120px;
+    height: 120px;
+
+    margin: 20px auto 25px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 58px;
+
+    background:
+        radial-gradient(circle, #a90031, #32000d);
+
+    box-shadow:
+        0 0 30px rgba(180,0,55,.5);
+
+    cursor: pointer;
+
+    animation: heartbeat 1.7s infinite;
+}
+
+.memory {
+    padding: 17px;
+
+    border-radius: 16px;
+
+    background: rgba(255,255,255,.025);
+    border: 1px solid rgba(255,255,255,.06);
+
+    color: #c9c9d1;
+}
+
+/* =========================
+   INPUT
+========================= */
+
+input {
+    width: 100%;
+
+    padding: 16px;
+
+    margin: 8px 0 14px;
+
+    border-radius: 13px;
+
+    border: 1px solid #282832;
+
+    outline: none;
+
+    background: #06060b;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-family: Georgia, serif;
+}
+
+input:focus {
+    border-color: #276cff;
+    box-shadow: 0 0 15px rgba(0,90,255,.2);
+}
+
+/* =========================
+   CARTA FINAL
+========================= */
+
+.letter {
+    padding: 24px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(125,0,35,.18),
+            rgba(0,65,150,.12)
+        );
+
+    border: 1px solid rgba(255,255,255,.08);
+}
+
+.letter p {
+    margin-bottom: 18px;
+}
+
+.signature {
+    text-align: right;
+    color: #ff416b;
+    font-size: 20px;
+    margin-top: 25px;
+}
+
+/* =========================
+   CORAZONES FLOTANTES
+========================= */
+
+.floating-heart {
+    position: fixed;
+
+    bottom: -30px;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    opacity: 0;
+
+    animation: floatHeart linear forwards;
+}
+
+@keyframes floatHeart {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: .65;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* =========================
+   PIE
+========================= */
+
+.footer {
+    margin-top: 20px;
+
+    text-align: center;
+
+    color: #555560;
+
+    font-size: 12px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- FONDO -->
+
+<div class="background">
+
+    <div class="glow red-glow"></div>
+    <div class="glow blue-glow"></div>
+
+    <span class="star" style="top:12%;left:20%;">✦</span>
+    <span class="star" style="top:25%;left:80%;animation-delay:1s;">✦</span>
+    <span class="star" style="top:70%;left:15%;animation-delay:2s;">✦</span>
+    <span class="star" style="top:82%;left:75%;animation-delay:.5s;">✦</span>
+
+</div>
+
+
+<div class="container">
+
+    <!-- PROGRESO -->
+
+    <div class="progress-area">
+
+        <div class="progress-text">
+            <span>Para ti ❤️</span>
+            <span id="counter">1 / 6</span>
+        </div>
+
+        <div class="progress">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+
+        <!-- =========================
+             ENTRADA
+        ========================== -->
+
+        <section class="step active" id="step1">
+
+            <div class="romantic-entry">
+
+                <div class="flower left">
+                    🌹 🌷
+                </div>
+
+                <div class="flower right">
+                    🌷 🌹
+                </div>
+
+                <div class="flower bottom">
+                    🌸 🌺 🌷 🌸
+                </div>
+
+
+                <div class="floating-mini m1">❤️</div>
+                <div class="floating-mini m2">💗</div>
+                <div class="floating-mini m3">💙</div>
+                <div class="floating-mini m4">❤️</div>
+
+
+                <div class="main-heart">
+
+                    <div class="heart-text">
+
+                        <span>Hay algo</span>
+
+                        <span>que te quiero</span>
+
+                        <strong>decir ❤️</strong>
+
+                    </div>
+
+                </div>
+
+
+                <p class="subtitle">
+                    Pero antes... déjame llevarte por una
+                    pequeña historia hecha especialmente para ti. ✨
+                </p>
+
+
+                <button
+                    class="open-button"
+                    onclick="nextStep()">
+
+                    Abrir mi corazón 💌
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PREGUNTA 1
+        ========================== -->
+
+        <section class="step" id="step2">
+
+            <div class="small-title">
+                Una pregunta ❤️
+            </div>
+
+            <h2>
+                ¿Qué fue lo primero que hizo
+                que me fijara en ti?
+            </h2>
+
+            <p>
+                Piénsalo bien... quizá la respuesta
+                sea más sencilla de lo que parece. 👀
+            </p>
+
+
+            <div class="buttons">
+
+                <button onclick="wrong1()">
+                    Tu forma de hablar
+                </button>
+
+                <button onclick="correct1()">
+                    Tu forma de ser ❤️
+                </button>
+
+                <button onclick="wrong1()">
+                    Tu manera de vestir
+                </button>
+
+            </div>
+
+
+            <div
+                class="message"
+                id="message1">
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PREGUNTA 2
+        ========================== -->
+
+        <section class="step" id="step3">
+
+            <div class="small-title">
+                Otra pregunta 💙
+            </div>
+
+            <h2>
+                ¿Cómo comenzó realmente
+                nuestra historia?
+            </h2>
+
+
+            <div class="buttons">
+
+                <button onclick="wrong2()">
+                    Todo estaba planeado.
+                </button>
+
+                <button onclick="correct2()">
+                    Nos encontramos sin buscarlo
+                    y terminamos siendo importantes. ❤️
+                </button>
+
+                <button onclick="wrong2()">
+                    Fue solamente casualidad.
+                </button>
+
+            </div>
+
+
+            <div
+                class="message"
+                id="message2">
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             RECUERDO
+        ========================== -->
+
+        <section class="step" id="step4">
+
+            <div class="small-title">
+                Un pequeño recuerdo 🌹
+            </div>
+
+            <h2>
+                Hay algo escondido aquí...
+            </h2>
+
+            <p>
+                Toca el corazón y descubre
+                lo que tiene guardado.
+            </p>
+
+
+            <div class="heart-area">
+
+                <div
+                    class="big-click-heart"
+                    onclick="revealMemory()">
+
+                    ❤️
+
+                </div>
+
+
+                <div
+                    class="memory"
+                    id="memory">
+
+                    Algunas cosas bonitas
+                    empiezan sin que uno se dé cuenta. ✨
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="blue-button"
+                id="continueButton"
+                style="display:none;"
+                onclick="nextStep()">
+
+                Continuar →
+
+            </button>
+
+        </section>
+
+
+        <!-- =========================
+             CONTRASEÑA
+        ========================== -->
+
+        <section class="step" id="step5">
+
+            <div class="small-title">
+                Un último secreto 🔐
+            </div>
+
+            <h2>
+                Hay una palabra que
+                abre la última parte.
+            </h2>
+
+            <p>
+                Pista: es una palabra sencilla,
+                pero significa mucho.
+            </p>
+
+
+            <input
+                id="password"
+                type="text"
+                placeholder="Escribe la palabra..."
+            >
+
+
+            <button
+                class="primary"
+                onclick="checkPassword()">
+
+                Desbloquear 🔓
+
+            </button>
+
+
+            <div
+                class="message"
+                id="passwordMessage">
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             DECISIÓN
+        ========================== -->
+
+        <section class="step" id="step6">
+
+            <div class="small-title">
+                Llegamos al final ❤️
+            </div>
+
+            <h1>
+                Ahora te toca
+                <span class="red">decidir.</span>
+            </h1>
+
+            <p>
+                Después de todo esto,
+                solamente queda una pregunta.
+            </p>
+
+            <h2>
+                ¿Seguimos escribiendo
+                nuestra historia juntos?
+            </h2>
+
+
+            <div class="buttons">
+
+                <button
+                    class="primary"
+                    onclick="showLetter()">
+
+                    Sí, seguimos ❤️
+
+                </button>
+
+
+                <button
+                    class="blue-button"
+                    onclick="maybe()">
+
+                    Déjame pensarlo... 💙
+
+                </button>
+
+            </div>
+
+
+            <div
+                class="message"
+                id="finalMessage">
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CARTA FINAL
+        ========================== -->
+
+        <section
+            class="step"
+            id="final">
+
+            <div class="small-title">
+                Para ti 🌹
+            </div>
+
+
+            <h1>
+                Mi carta
+                <span class="red">❤️</span>
+            </h1>
+
+
+            <div class="letter">
+
+                <p>
+                    Quizá una página como esta no sea
+                    la forma más normal de decir lo que siento...
+                </p>
+
+                <p>
+                    Pero quería hacer algo diferente.
+                    Algo que tuviera un poquito de todo:
+                    recuerdos, detalles, una sonrisa
+                    y unas palabras para ti.
+                </p>
+
+                <p>
+                    Gracias por cada conversación,
+                    cada momento, cada risa
+                    y cada recuerdo bonito.
+                </p>
+
+                <p>
+                    Hay personas que aparecen en la vida
+                    sin avisar y terminan ocupando
+                    un lugar especial.
+                </p>
+
+                <p>
+                    Y si esta historia todavía tiene
+                    capítulos por escribir,
+                    espero que sean los más bonitos. ❤️
+                </p>
+
+
+                <p class="signature">
+                    Te quiero. ❤️
+                </p>
+
+            </div>
+
+
+            <br>
+
+
+            <button
+                class="blue-button"
+                onclick="restart()">
+
+                Volver al principio ↻
+
+            </button>
+
+        </section>
+
+
+    </div>
+
+
+    <div class="footer">
+        Hecho con cariño ❤️
+    </div>
+
+</div>
+
+
+<script>
+
+/* =========================
+   VARIABLES
+========================= */
+
+let currentStep = 1;
+
+
+/* =========================
+   CAMBIAR DE PASO
+========================= */
+
+function nextStep() {
+
+    const current =
+        document.getElementById("step" + currentStep);
+
+    if (current) {
+        current.classList.remove("active");
+    }
+
+
+    currentStep++;
+
+
+    const next =
+        document.getElementById("step" + currentStep);
+
+    if (next) {
+        next.classList.add("active");
+    }
+
+
+    updateProgress();
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+
+/* =========================
+   PROGRESO
+========================= */
+
+function updateProgress() {
+
+    const percent =
+        Math.min((currentStep / 6) * 100, 100);
+
+    document.getElementById("progressBar").style.width =
+        percent + "%";
+
+    document.getElementById("counter").textContent =
+        currentStep + " / 6";
+}
+
+
+/* =========================
+   PREGUNTA 1
+========================= */
+
+function wrong1() {
+
+    const message =
+        document.getElementById("message1");
+
+    message.style.color = "#ff496c";
+
+    message.textContent =
+        "Mmm... no exactamente 😏";
+
+}
+
+
+function correct1() {
+
+    const message =
+        document.getElementById("message1");
+
+    message.style.color = "#53e89b";
+
+    message.textContent =
+        "Exactamente... ❤️";
+
+    setTimeout(() => {
+        nextStep();
+    }, 900);
+}
+
+
+/* =========================
+   PREGUNTA 2
+========================= */
+
+function wrong2() {
+
+    const message =
+        document.getElementById("message2");
+
+    message.style.color = "#ff496c";
+
+    message.textContent =
+        "No exactamente... intenta otra vez 👀";
+
+}
+
+
+function correct2() {
+
+    const message =
+        document.getElementById("message2");
+
+    message.style.color = "#53e89b";
+
+    message.textContent =
+        "Esa es... ❤️";
+
+    setTimeout(() => {
+        nextStep();
+    }, 900);
+}
+
+
+/* =========================
+   RECUERDO
+========================= */
+
+function revealMemory() {
+
+    document.getElementById("memory").innerHTML =
+        "A veces las mejores historias empiezan " +
+        "sin avisar... y terminan convirtiéndose " +
+        "en recuerdos que uno quiere conservar. ❤️";
+
+    document.getElementById("continueButton").style.display =
+        "block";
+}
+
+
+/* =========================
+   CONTRASEÑA
+========================= */
+
+function checkPassword() {
+
+    const input =
+        document.getElementById("password");
+
+    const value =
+        input.value.toLowerCase().trim();
+
+    const message =
+        document.getElementById("passwordMessage");
+
+
+    if (
+        value === "amor" ||
+        value === "historia" ||
+        value === "vida"
+    ) {
+
+        message.style.color = "#53e89b";
+
+        message.textContent =
+            "Secreto desbloqueado ❤️";
+
+        setTimeout(() => {
+            nextStep();
+        }, 900);
+
+    } else {
+
+        message.style.color = "#ff496c";
+
+        message.textContent =
+            "Mmm... esa no es. 👀";
+
+    }
+}
+
+
+/* =========================
+   BOTÓN PENSARLO
+========================= */
+
+function maybe() {
+
+    document.getElementById("finalMessage").textContent =
+        "Está bien... pero todavía puedes pensarlo. ❤️";
+
+}
+
+
+/* =========================
+   CARTA FINAL
+========================= */
+
+function showLetter() {
+
+    document
+        .getElementById("step6")
+        .classList.remove("active");
+
+
+    document
+        .getElementById("final")
+        .classList.add("active");
+
+
+    document.getElementById("counter").textContent =
+        "Final ❤️";
+
+
+    document.getElementById("progressBar").style.width =
+        "100%";
+
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+
+/* =========================
+   REINICIAR
+========================= */
+
+function restart() {
+
+    document
+        .getElementById("final")
+        .classList.remove("active");
+
+
+    currentStep = 1;
+
+
+    document
+        .getElementById("step1")
+        .classList.add("active");
+
+
+    document.getElementById("password").value = "";
+
+
+    updateProgress();
+
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+
+/* =========================
+   CORAZONES FLOTANTES
+========================= */
+
+function createFloatingHeart() {
+
+    const heart =
+        document.createElement("div");
+
+    heart.className = "floating-heart";
+
+
+    const symbols = [
+        "❤️",
+        "💗",
+        "💙",
+        "🌹",
+        "✨"
+    ];
+
+
+    heart.textContent =
+        symbols[
+            Math.floor(
+                Math.random() * symbols.length
+            )
+        ];
+
+
+    heart.style.left =
+        Math.random() * 100 + "vw";
+
+
+    heart.style.fontSize =
+        (12 + Math.random() * 15) + "px";
+
+
+    heart.style.animationDuration =
+        (5 + Math.random() * 5) + "s";
+
+
+    document.body.appendChild(heart);
+
+
+    setTimeout(() => {
+
+        heart.remove();
+
+    }, 10000);
+}
+
+
+setInterval(createFloatingHeart, 900);
+
+
+/* =========================
+   ESTRELLAS
+========================= */
+
+document
+    .querySelectorAll(".star")
+    .forEach((star, index) => {
+
+        star.style.animationDelay =
+            (index * .8) + "s";
+
+    });
+
+</script>
+
+</body>
+</html>
